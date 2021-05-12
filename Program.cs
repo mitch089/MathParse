@@ -19,7 +19,8 @@ namespace MathParse
                 {
                     try
                     {
-                        await MathParse.Parser.Evaluate(expression, Console.Out);
+                        var result = await MathParse.Parser.Evaluate(expression, Console.Out);
+                        Console.WriteLine($"{expression} = {result}");
                     }
                     catch(Exception ex)
                     { Console.WriteLine($"Error: {ex}"); }
