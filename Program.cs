@@ -8,14 +8,12 @@ namespace MathParse
     {
         static async Task Main(string[] args)
         {
-            String expression;
-
-            do
+            while (true)
             {
                 Console.Write(">> ");
-                expression = Console.ReadLine();
+                String expression = Console.ReadLine();
 
-                if (!String.IsNullOrEmpty(expression))
+                if (!String.IsNullOrWhiteSpace(expression))
                 {
                     try
                     {
@@ -27,8 +25,11 @@ namespace MathParse
 
                     Console.WriteLine();
                 }
+                else
+                {
+                    break;
+                }
             }
-            while(!String.IsNullOrEmpty(expression));
         }
     }
 }

@@ -132,9 +132,6 @@ namespace MathParse
                 String rhs = expression.Substring(OperatorPosition + 1);
                 char operation = expression[OperatorPosition];
 
-                if (output != null)
-                    await output.WriteLineAsync($"[{lhs.Trim()}] <{operation}> [{rhs.Trim()}]");
-                
                 double lhsValue = await Evaluate(lhs, output);
                 double rhsValue = await Evaluate(rhs, output);
                 double result = operation switch
